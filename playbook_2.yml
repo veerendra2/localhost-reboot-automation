@@ -1,0 +1,16 @@
+- name: Running 2nd Playbook
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+  - name: Creating tmp File 1
+    shell: echo "This is tmp 1" > /home/veeru/tmp1
+
+  - name: Creating tmp File 2
+    shell: echo "This is tmp 2" > /home/veeru/tmp2
+
+  - name: Some Running Long Run Job
+    shell: ./scripts/long_run_job.sh
+
+  - debug: msg="Playbook2 is Completed"

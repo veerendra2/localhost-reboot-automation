@@ -1,0 +1,34 @@
+- name: Install Packages and Update
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+  - name: Installing VIM Packages
+    become: true
+    yum:
+      name: vim
+      state: installed
+
+  - name: Running Update
+    become: true
+    shell: yum
+
+  - name: Adding Systemd Entry For Nex Playbook playbook_2.yml
+    become: true
+    template:
+      src: jinja-templates/playbook_2.service.j2
+      dest: /etc/systemd/system/playbook_2.service
+      mode: '644'
+
+  - name: Enabling playbook_2.yml for next reboot
+    become: true
+    systemd:
+      name: playbook_2
+      enabled: yes
+
+  - debug: msg="First Playbook Completed"
+
+  - name: See you after reboot
+    become: true
+    shell: init 6

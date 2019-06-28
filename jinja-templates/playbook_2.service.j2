@@ -1,0 +1,19 @@
+[Unit]
+Description=Custom Unit File For OSP13 Automation Playbooks
+After=default.target
+DefaultDependencies=no
+Before=shutdown.target
+
+[Service]
+User=veeru
+Type=oneshot
+RemainAfterExit=no
+WorkingDirectory=/home/veeru
+ExecStart=/usr/bin/ansible-playbook /home/veeru/playbook_2.yml
+Environment="ANSIBLE_LOG_PATH=/home/veeru/playbook_2.log"
+ExecStartPost=/usr/bin/sudo /usr/bin/systemctl disable /etc/systemd/system/playbook_2.service
+TimeoutStopSec=30
+ExecStop=/usr/bin/sudo /usr/sbin/reboot
+
+[Install]
+WantedBy=default.target
