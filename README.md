@@ -1,3 +1,5 @@
+![GitHub stars](https://img.shields.io/github/stars/veerendra2/localhost-reboot-automation.svg?style=social)
+![GitHub forks](https://img.shields.io/github/forks/veerendra2/localhost-reboot-automation.svg?style=for-the-badge)
 # Automate localhost reboots with Systemd and Ansible
 
 Sometimes you might want to continue automation after reboot or there might be multiple reboot after package installation. With help of `systemd`, we can continue automation even there is(are) reboot(s)
