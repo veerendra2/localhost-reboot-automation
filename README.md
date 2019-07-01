@@ -1,4 +1,4 @@
-![GitHub stars](https://img.shields.io/github/stars/veerendra2/localhost-reboot-automation.svg?style=social)
+![GitHub stars](https://img.shields.io/github/stars/veerendra2/localhost-reboot-automation.svg?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/veerendra2/localhost-reboot-automation.svg?style=for-the-badge)
 # Automate localhost reboots with Systemd and Ansible
 
